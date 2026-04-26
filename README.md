@@ -122,6 +122,7 @@ Punct → '.'
 ```
 
 **Ejemplo Arbol Modelo 1**
+
 <img width="1168" height="787" alt="image" src="https://github.com/user-attachments/assets/3612f491-bdfe-48fc-81bf-19a4b07cf35e" />
 
 
