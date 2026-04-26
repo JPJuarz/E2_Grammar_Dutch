@@ -292,10 +292,9 @@ Al correr el programa se muestra el árbol de análisis de cada oración de prue
 | 6 | `jij zie de vrouw niet .` | Tú no ves a la mujer. |
 | 7 | `de hond eet met een kind .` | El perro come con un niño. |
 | 8 | `ik ben een man en zij zie de hond .` | Yo soy un hombre y ella ve al perro. |
-| 9 | `wij eet maar hij ga niet .` | Nosotros comemos pero él no va. |
-| 10 | `de klein kind eet .` | El niño pequeño come. |
-| 11 | `hij zie een vrouw in het huis .` | Él ve a una mujer en la casa. |
-| 12 | `ik ga naar het huis .` | Yo voy hacia la casa. |
+| 9 | `de klein kind eet .` | El niño pequeño come. |
+| 10 | `hij zie een vrouw in het huis .` | Él ve a una mujer en la casa. |
+| 11 | `ik ga naar het huis .` | Yo voy hacia la casa. |
  
 ### Oraciones rechazadas 
  
