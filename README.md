@@ -272,7 +272,7 @@ pip install nltk (en consola)
  
 ### Ejecución
  
-python dutch_grammar.py
+Correr dutch_grammar.py (Ctrl + alt + n (en windows))
  
 Al correr el programa se muestra el árbol de análisis de cada oración de prueba. Las oraciones válidas muestran su árbol y las que no pertenecen a la gramática imprimen `"Unable to parse"`.
  
