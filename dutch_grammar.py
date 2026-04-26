@@ -69,9 +69,6 @@ oraciones = [
 #  Parseo y resultados
 print(" \nParser LL(1) — Holandés (Dutch)")
 
-aceptadas_correctas = 0
-rechazadas_correctas = 0
-
 for esperado, oracion in oraciones:
     tokens = nltk.word_tokenize(oracion.lower())
     arboles = list(parser.parse(tokens))
@@ -84,10 +81,6 @@ for esperado, oracion in oraciones:
         print(f"Resultado: ACEPTADA ✓" if esperado == "ACEPTADA" else f"Resultado: ACEPTADA ✗ (debería ser rechazada)")
         for arbol in arboles:
             arbol.pretty_print()
-        if esperado == "ACEPTADA":
-            aceptadas_correctas += 1
     else:
+        print("Unable to parse")
         print(f"Resultado: RECHAZADA ✓" if esperado == "RECHAZADA" else f"Resultado: RECHAZADA ✗ (debería ser aceptada)")
-        if esperado == "RECHAZADA":
-            rechazadas_correctas += 1
-
