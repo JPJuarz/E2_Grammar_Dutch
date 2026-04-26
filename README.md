@@ -123,7 +123,7 @@ Punct → '.'
 
 **Ejemplo Arbol Modelo 1**
 
-<img width="1168" height="787" alt="image" src="https://github.com/user-attachments/assets/3612f491-bdfe-48fc-81bf-19a4b07cf35e" />
+<img width="1260" height="682" alt="image" src="https://github.com/user-attachments/assets/23e3b657-e9ad-455f-990d-c9d88653e15b" />
 
 
 Esta gramática es una Gramática Libre de Contexto, clasificada en el **Nivel 2 de la Jerarquía de Chomsky**, dado que todas las producciones tienen exactamente un símbolo no-terminal en el lado izquierdo. Sin embargo, presenta dos problemas que impiden implementarla directamente como parser LL(1):
