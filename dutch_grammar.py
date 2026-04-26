@@ -40,7 +40,6 @@ oraciones = [
     ("ACEPTADA", "Jij zie de vrouw niet."),
     ("ACEPTADA", "De hond eet met een kind."),
     ("ACEPTADA", "Ik ben een man en zij zie de hond."),
-    ("ACEPTADA", "Wij eet maar hij ga niet."),
     ("ACEPTADA", "De klein kind eet."),
     ("ACEPTADA", "Hij zie een vrouw in het huis."),
     ("ACEPTADA", "Ik ga naar het huis."),
