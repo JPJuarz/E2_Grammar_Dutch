@@ -7,7 +7,7 @@
 
 ## Descripción
 
-Las gramáticas constituyen lo que es el fundamento  sobre el que se construyen los métodos computacionales para el procesamiento del lenguaje natural. Basicamente, una gramática describe la estructura de un idioma mediante un conjunto de reglas que dictan como es que se  se pueden combinar palabras y símbolos para formar oraciones o cadenas válidas. En este proyecto se desarrollara un parser capaz de determinar si una oración dada pertenece o no al lenguaje definido por la gramática.
+"Las gramáticas constituyen lo que es el fundamento sobre el que se construyen los métodos computacionales para el procesamiento del lenguaje natural. Basicamente, una gramática describe la estructura de un idioma mediante un conjunto de reglas que dictan como es que se  se pueden combinar palabras y símbolos para formar oraciones o cadenas válidas." (Hopcroft, 2008) En este proyecto se desarrollara un parser capaz de determinar si una oración dada pertenece o no al lenguaje definido por la gramática.
 
 El idioma seleccionado es el **holandés (Dutch)**, una lengua la cuál es germánica occidental y hablada principalmente en los Países Bajos y Bélgica. El holandés comparte raíces con el alemán y el inglés y su sintaxis sigue un orden relativamente estricto de "Sujeto + Verbo + Complemento", con el verbo siempre ocupando la segunda posición en una oración principal sin importar que. Algo importante de saber es que, el holandés utiliza dos tipos de artículos definidos utilizadno "de" para la mayoría de los sustantivos y "het" para los neutros, lo cual influye directamente en la estructura de la frase nominal.
 
@@ -363,6 +363,8 @@ La gramática limpia sigue siendo **Tipo 2**. Aun eliminando ambigüedad y recur
 ---
  
 ## Referencias
+
+Hopcroft, J., Motwani, R., Ullman, J. (2008). Teoría de autómatas, lenguajes y computación (3rd ed.) Pearson Education.
  
 GeeksforGeeks. (2023). Construction of LL(1) Parsing Table.
 https://www.geeksforgeeks.org/construction-of-ll1-parsing-table/
