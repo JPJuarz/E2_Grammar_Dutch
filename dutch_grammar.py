@@ -1,9 +1,6 @@
 import nltk
 from nltk import CFG
 
-nltk.download('punkt')
-nltk.download('punkt_tab')
-
 #  Gramática Libre de Contexto — Holandés (Dutch)
 #  Sin ambigüedad y sin recursión izquierda
 
@@ -69,7 +66,7 @@ oraciones = [
 print(" \nParser LL(1) — Holandés (Dutch)")
 
 for esperado, oracion in oraciones:
-    tokens = nltk.word_tokenize(oracion.lower())
+    tokens = oracion.lower().replace('.', ' .').split()
     arboles = list(parser.parse(tokens))
 
     print()
