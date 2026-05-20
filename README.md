@@ -21,7 +21,9 @@ La gramática construida acepta las siguientes estructuras:
 
 **Todas las oraciones deben terminar con un punto (`.`).**
 
-Para la implementación se utiliza un **parser LL(1)**, una técnica de análisis sintáctico descendente empleada en lingüística computacional. "LL significa *left-to-right, leftmost derivation*: el parser lee la entrada de izquierda a derecha construyendo siempre el símbolo no-terminal más a la izquierda. El "(1)" indica que se utiliza un único token de anticipación (*lookahead*) para tomar decisiones, eliminando la necesidad de hacer backtracking" (GeeksforGeeks, 2023).
+Para la implementación se utiliza un **parser LL(1)**, una técnica de análisis sintáctico descendente usada en lingüística computacional. "LL significa *left-to-right, leftmost derivation*: el parser lee la entrada de izquierda a derecha construyendo siempre el símbolo no-terminal más a la izquierda. El "(1)" indica que se utiliza un único token de anticipación (*lookahead*) para tomar decisiones, eliminando la necesidad de hacer backtracking" (GeeksforGeeks, 2023).
+
+La elección de LL(1) sobre otras estrategias (como CYK u otras) se justifica por varias razones primero siendo que la gramática resultante es no ambigua, lo que garantiza que cada celda de la tabla de análisis tiene como máximo una producción. Al mismo tiempo la ausencia de recursión izquierda permite que el parser siempre avance en la cadena sin ciclos y finalmente el vocabulario del holandés modelado es pequeño y determinista, por lo que un solo token de anticipación es suficiente para distinguir todas las producciones.
 
 ---
 
@@ -264,7 +266,7 @@ Punct → '.'
  
 ## Implementación
  
-La gramática se implementó en Python usando **NLTK** (*Natural Language Toolkit*), una biblioteca que ofrece herramientas para tokenización, definición de gramáticas y análisis sintáctico (Bird et al., 2009).
+La gramática se implementó en Python usando **NLTK** (*Natural Language Toolkit*), una biblioteca que ofrece herramientas para definición de gramáticas y análisis sintáctico. La tokenización se realiza con el método nativo split() de Python, sin dependencias externas adicionales. (Bird et al., 2009).
  
 ### Requisitos
  
@@ -323,7 +325,21 @@ Al correr el programa se muestra el árbol de análisis de cada oración de prue
 | 16 | `ik` | Una sola palabra, no forma ninguna oración |
 | 17 | `de hond de vrouw .` | Dos frases nominales seguidas, falta el verbo |
 | 18 | `groot man eet .` | Adjetivo sin artículo antes del sustantivo |
- 
+
+
+---
+
+### Reporte de Pruebas
+
+| Total | Aceptadas correctas | Rechazadas correctas | Falsos positivos | Falsos negativos |
+|-------|---------------------|----------------------|------------------|------------------|
+| 29    | 11/11               | 18/18                | 0                | 0                |
+
+El programa pasó correctamente las 29 pruebas definidas:
+- Las 11 oraciones válidas fueron aceptadas y generaron su árbol de sintaxis.
+- Las 18 oraciones inválidas fueron rechazadas con "Unable to parse".
+- No se registraron falsos positivos ni falsos negativos.
+
 ---
 ### Árboles de sintaxis de oraciones correctas (output del programa)
 <img width="512" height="492" alt="image" src="https://github.com/user-attachments/assets/d99279ab-9b55-472f-bcfd-19f62ea3323a" />
@@ -358,7 +374,7 @@ La gramática base es **Tipo 2 (CFG)** ya que todas sus producciones tienen un s
  
 ### Después de limpiar la gramática
  
-La gramática limpia sigue siendo **Tipo 2**. Aun eliminando ambigüedad y recursión izquierda, esto no cambia el nivel en la jerarquía de Chomsky. Lo que sí cambia es la eficiencia del análisis: al ser compatible con un parser LL(1), la complejidad baja a **O(n)** osea una complejidad lineal, lo cual es una mejora importante especialmente cuando se procesan grandes cantidades de oraciones.
+La gramática limpia sigue siendo **Tipo 2**. Aun eliminando ambigüedad y recursión izquierda, esto no cambia el nivel en la jerarquía de Chomsky. Lo que sí cambia es la eficiencia del análisis. Un parser LL(1) opera en O(n) en el caso promedio y mejor caso, donde n es la longitud de la cadena de entrada, ya que cada token se consume exactamente una vez sin retroceso (backtracking). El peor caso también es O(n) dado que la tabla de análisis LL(1) garantiza que en cada paso se toma una única decisión determinista: con un solo token de anticipación (lookahead) se selecciona directamente la producción correcta, eliminando la exploración de múltiples caminos o un parser menos eficiente.Entonces dado a la ausencia de ambigüedad y de recursión izquierda son exactamente las condiciones que garantizan la unicidad de la tabla de análisis y el comportamiento lineal, LL(1) es la alternativa más eficiente para esta gramática.
  
 ---
  
