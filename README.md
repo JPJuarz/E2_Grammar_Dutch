@@ -267,6 +267,59 @@ Punct → '.'
 
 <img width="1252" height="1010" alt="image" src="https://github.com/user-attachments/assets/51a0c65f-373a-40d5-bbfc-ada53028c7e3" />
 
+### Tabla First and Follow
+
+Se utilizo la siguiente herramienta para conseguir la tabla nullable/first/follow. Link https://www.cs.princeton.edu/courses/archive/spr26/cos320/LL1/index.html
+Esta prueba fue realizada con lo siguiente
+
+```
+S ::= MC Punct
+S ::= MC Conj MC Punct
+MC ::= NP VP
+NP ::= SNP
+NP ::= SNP PP
+SNP ::= Det N
+SNP ::= Pron
+SNP ::= Det Adj N
+VP ::= V
+VP ::= V NP
+VP ::= V Neg
+VP ::= V NP Neg
+VP ::= V PP
+VP ::= V NP PP
+PP ::= P NP
+Det ::= de
+Det ::= het
+Det ::= een
+Pron ::= ik
+Pron ::= jij
+Pron ::= hij
+Pron ::= zij
+Pron ::= wij
+N ::= man
+N ::= vrouw
+N ::= kind
+N ::= huis
+N ::= hond
+V ::= ben
+V ::= heb
+V ::= eet
+V ::= ga
+V ::= zie
+Adj ::= groot
+Adj ::= klein
+P ::= met
+P ::= in
+P ::= op
+P ::= naar
+Neg ::= niet
+Conj ::= en
+Conj ::= maar
+Punct ::= .
+```
+
+<img width="1315" height="983" alt="image" src="https://github.com/user-attachments/assets/e60478d9-e437-43ef-9c4d-747231401322" />
+
 ---
  
 ## Implementación
