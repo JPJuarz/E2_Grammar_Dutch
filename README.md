@@ -123,9 +123,9 @@ Conj → 'en' | 'maar'
 Punct → '.'
 ```
 
-**Ejemplo Arbol Modelo 1**
+**Ejemplo Arbol Modelo 1 (Con ambiguedad y recursión izquierda)**
 
-<img width="1260" height="682" alt="image" src="https://github.com/user-attachments/assets/23e3b657-e9ad-455f-990d-c9d88653e15b" />
+<img width="1338" height="954" alt="image" src="https://github.com/user-attachments/assets/d5c2efe9-8940-407b-8508-d9bf4e99eebc" />
 
 
 Esta gramática es una Gramática Libre de Contexto, clasificada en el **Nivel 2 de la Jerarquía de Chomsky**, dado que todas las producciones tienen exactamente un símbolo no-terminal en el lado izquierdo. Sin embargo, presenta dos problemas que impiden implementarla directamente como parser LL(1):
@@ -262,6 +262,11 @@ Neg   → 'niet'
 Conj  → 'en' | 'maar'
 Punct → '.'
 ```
+
+**Ejemplo Arbol Modelo 3 Limpio (Sin ambiguedad ni recursión izquierda)**
+
+<img width="1252" height="1010" alt="image" src="https://github.com/user-attachments/assets/51a0c65f-373a-40d5-bbfc-ada53028c7e3" />
+
 ---
  
 ## Implementación
